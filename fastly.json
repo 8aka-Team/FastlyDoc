@@ -4,7 +4,7 @@
     "commit": "main",
     "install": "pnpm install",
     "build": "pnpm run build",
-    "output": "dist",
+    "output": "static",
     "patcher": [
       {
         "type": "URLPatcher",
