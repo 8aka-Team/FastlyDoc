@@ -1,6 +1,7 @@
 
 name: "Build Preview Deployment"
-
+permissions:
+  contents: write
 on:
   push
 
