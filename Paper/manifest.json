@@ -1,0 +1,27 @@
+{
+  "name": "PaperMC Docs",
+  "short_name": "Docs",
+  "theme_color": "#004ee9",
+  "background_color": "#424242",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./index.html",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://docs.papermc.io/manifest.json"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://assets.papermc.io/brand/papermc_logo.256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://assets.papermc.io/brand/papermc_logo.512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
