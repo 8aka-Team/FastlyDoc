@@ -24,8 +24,8 @@
   "Geyser": {
     "repo": "https://github.com/GeyserMC/GeyserWebsite.git",
     "commit": "master",
-    "install": "yarn install",
-    "build": "yarn run build",
+    "install": "pnpm install",
+    "build": "pnpm run build",
     "output": "build",
     "patcher": [
       {
