@@ -31,9 +31,7 @@ jobs:
       - name: Build Docs
         run: |
           python main.py
-      - name: DeployAdd commentMore actions
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
+          folder: build
