@@ -25,6 +25,8 @@ jobs:
           run_install: false
       - name: "setup d2"
         run: "curl -fsSL https://d2lang.com/install.sh | sh -s --"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Set up Python
         uses: actions/setup-python@v3
         with:

@@ -20,5 +20,71 @@
       }
     ],
     "name": "Paper"
+  },
+  "Geyser": {
+    "repo": "https://github.com/GeyserMC/GeyserWebsite.git",
+    "commit": "master",
+    "install": "yarn install",
+    "build": "yarn run build",
+    "output": "build",
+    "patcher": [
+      {
+        "type": "URLPatcher",
+        "rules": [
+          {
+            "from": "geysermc.org",
+            "to": "fastly.8aka.cn/Geyser"
+          }
+        ]
+      },
+      {
+        "type": "GeyserPatcher"
+      }
+    ],
+    "name": "Geyser"
+  },
+  "Purpur": {
+    "repo": "https://github.com/PurpurMC/PurpurDocs.git",
+    "commit": "master",
+    "install": "pip install -r requirements.txt",
+    "build": "mkdocs build",
+    "output": "site",
+    "patcher": [
+        {
+            "type": "URLPatcher",
+            "rules": [
+              {
+                "from": "purpurmc.org",
+                "to": "fastly.8aka.cn/Purpur"
+              }
+            ]
+          },
+          {
+            "type": "PurpurPatcher"
+          }
+    ],
+    "name": "Purpur"
+  },
+  "Pumpkin": {
+    "repo": "https://github.com/Pumpkin-MC/Pumpkin-Docs.git",
+    "commit": "main",
+    "install": "pnpm install",
+    "build": "pnpm run build",
+    "output": "build",
+    "patcher": [
+        {
+            "type": "URLPatcher",
+            "rules": [
+              {
+                "from": "pumpkin.org",
+                "to": "fastly.8aka.cn/Pumpkin"
+              }
+            ]
+          },
+          {
+            "type": "PumpkinPatcher"
+          }
+    ],
+    "name": "Pumpkin"
   }
 }

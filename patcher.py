@@ -48,10 +48,60 @@ class PaperPatcher(Patcher):
             print(f'Patched {config_path}')
 
 
+class GeyserPatcher(Patcher):
+    def patch(self, **kwargs):
+        config_path = os.path.join(self.repo_path, 'docusaurus.config.ts')
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            content = re.sub(r"baseUrl: '\/',", "baseUrl: '/Geyser/',", content)
+            content = re.sub(r"url: 'https://docs.geysermc.org'", "url: 'https://fastly.8aka.cn'", content)
+
+            with open(config_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f'Patched {config_path}')
+
+
+class PurpurPatcher(Patcher):
+    def patch(self, **kwargs):
+        config_path = os.path.join(self.repo_path, 'mkdocs.yml')
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            content = re.sub(r'site_url: https://purpurmc.org/docs', 'site_url: https://fastly.8aka.cn/Purpur',
+                               content)
+
+            with open(config_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f'Patched {config_path}')
+
+
+class PumpkinPatcher(Patcher):
+    def patch(self, **kwargs):
+        config_path = os.path.join(self.repo_path, '.vitepress', 'config.mts')
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            content = re.sub(r"base: '\/',", "base: '/Pumpkin/',", content)
+
+            with open(config_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f'Patched {config_path}')
+
+
 def get_patcher(name, repo_path):
-    if name == 'URLPatcher':
-        return URLPatcher(repo_path)
-    elif name == 'PaperPatcher':
-        return PaperPatcher(repo_path)
+    patchers = {
+        'URLPatcher': URLPatcher,
+        'PaperPatcher': PaperPatcher,
+        'GeyserPatcher': GeyserPatcher,
+        'PurpurPatcher': PurpurPatcher,
+        'PumpkinPatcher': PumpkinPatcher
+    }
+    patcher_class = patchers.get(name)
+    if patcher_class:
+        return patcher_class(repo_path)
     else:
         raise ValueError(f'Unknown patcher: {name}')
