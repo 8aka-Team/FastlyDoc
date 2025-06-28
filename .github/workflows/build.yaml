@@ -37,9 +37,15 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.9"
+      - name: Install Image Tools
+        run: |
+          python -m pip install pillow pillow-avif-plugin tqdm pillow-jxl-plugin
       - name: Build Docs
         run: |
           python main.py
+      - name: Optimize Image
+        run: |
+          python convert.py . --threads 16 --delete-backup --format avif
       - name: Deploy Docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
