@@ -1,0 +1,1 @@
+import{_ as i,c as s,o as e,af as t}from"./chunks/framework.2x6h2CDZ.js";const k=JSON.parse('{"title":"PVP","description":"","frontmatter":{},"headers":[],"relativePath":"config/pvp.md","filePath":"en/config/pvp.md"}'),l={name:"config/pvp.md"};function n(p,a,o,h,d,r){return e(),s("div",null,a[0]||(a[0]=[t("",21)]))}const g=i(l,[["render",n]]);export{k as __pageData,g as default};
