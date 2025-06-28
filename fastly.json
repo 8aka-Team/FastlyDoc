@@ -11,7 +11,7 @@
         "rules": [
           {
             "from": "papermc.io",
-            "to": "fastly.8aka.cn/Paper"
+            "to": "paper.fastly.8aka.cn"
           }
         ]
       },
@@ -33,7 +33,7 @@
         "rules": [
           {
             "from": "geysermc.org",
-            "to": "fastly.8aka.cn/Geyser"
+            "to": "geyser.fastly.8aka.cn"
           }
         ]
       },
@@ -55,7 +55,7 @@
             "rules": [
               {
                 "from": "purpurmc.org",
-                "to": "fastly.8aka.cn/Purpur"
+                "to": "purpur.fastly.8aka.cn"
               }
             ]
           },
@@ -77,7 +77,7 @@
             "rules": [
               {
                 "from": "pumpkin.org",
-                "to": "fastly.8aka.cn/Pumpkin"
+                "to": "pumpkin.fastly.8aka.cn"
               }
             ]
           },
