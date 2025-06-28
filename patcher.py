@@ -87,13 +87,29 @@ class PumpkinPatcher(Patcher):
             print(f'Patched {config_path}')
 
 
+class PostPluginsPatcher(Patcher):
+    def patch(self, **kwargs):
+        config_path = os.path.join(self.repo_path, 'docusaurus.config.js')
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Assuming similar structure to PumpkinPatcher, replace the rawUrl
+            content = re.sub(r'https://post.yizhan.wiki', 'https://post.fastly.8aka.cn', content)
+
+            with open(config_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f'Patched {config_path}')
+
+
 def get_patcher(name, repo_path):
     patchers = {
         'URLPatcher': URLPatcher,
         'PaperPatcher': PaperPatcher,
         'GeyserPatcher': GeyserPatcher,
         'PurpurPatcher': PurpurPatcher,
-        'PumpkinPatcher': PumpkinPatcher
+        'PumpkinPatcher': PumpkinPatcher,
+        'PostPluginsPatcher': PostPluginsPatcher
     }
     patcher_class = patchers.get(name)
     if patcher_class:
