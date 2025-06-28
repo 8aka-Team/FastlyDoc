@@ -1,8 +1,30 @@
 {
+  "Paper": {
+    "repo": "https://github.com/PaperMC/docs.git",
+    "commit": "main",
+    "install": "pnpm install",
+    "build": "pnpm run build",
+    "output": "dist",
+    "patcher": [
+      {
+        "type": "URLPatcher",
+        "rules": [
+          {
+            "from": "papermc.io",
+            "to": "fastly.8aka.cn/Paper"
+          }
+        ]
+      },
+      {
+        "type": "PaperPatcher"
+      }
+    ],
+    "name": "Paper"
+  },
   "Geyser": {
     "repo": "https://github.com/GeyserMC/GeyserWebsite.git",
     "commit": "master",
-    "install": "yarn install --frozen-lockfile",
+    "install": "yarn install",
     "build": "yarn run build",
     "output": "build",
     "patcher": [

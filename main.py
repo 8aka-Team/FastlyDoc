@@ -91,7 +91,7 @@ def generate_index_html(config):
 """
 
     for name in config:
-        html_content += f'        <li><a href="./{name}/">{name}</a></li>\n'
+        html_content += f'        <li><a href="https://{name.lower()}.fastly.8aka.cn/">{name}</a></li>\n'
 
     html_content += """
         </ul>

@@ -36,10 +36,7 @@ class PaperPatcher(Patcher):
             with open(config_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
-            content = re.sub(r'https://docs\.papermc\.io', 'https://fastly.8aka.cn', content)
-            if 'base:' not in content:
-                content = re.sub(r'(defineConfig\(\{)', r"\1\n  base: '/Paper',", content, 1)
-
+            content = re.sub(r'https://docs\.papermc\.io', 'https://paper.fastly.8aka.cn', content)
             # Remove starlightLinksValidator plugin
             content = re.sub(r'\s*starlightLinksValidator\([\s\S]*?\),?\s*', '', content)
 
@@ -55,8 +52,7 @@ class GeyserPatcher(Patcher):
             with open(config_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
-            content = re.sub(r"baseUrl: '\/',", "baseUrl: '/Geyser/',", content)
-            content = re.sub(r"url: 'https://geysermc.org'", "url: 'https://fastly.8aka.cn'", content)
+            content = re.sub(r"url: 'https://geysermc.org'", "url: 'https://geyser.fastly.8aka.cn'", content)
             content = re.sub(r"onBrokenLinks: 'throw'", "onBrokenLinks: 'warn'", content)
 
             with open(config_path, 'w', encoding='utf-8') as f:
@@ -71,7 +67,7 @@ class PurpurPatcher(Patcher):
             with open(config_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
-            content = re.sub(r'site_url: https://purpurmc.org/docs', 'site_url: https://fastly.8aka.cn/Purpur',
+            content = re.sub(r'site_url: https://purpurmc.org/docs', 'site_url: https://purpur.fastly.8aka.cn/',
                                content)
 
             with open(config_path, 'w', encoding='utf-8') as f:
@@ -85,8 +81,6 @@ class PumpkinPatcher(Patcher):
         if os.path.exists(config_path):
             with open(config_path, 'r', encoding='utf-8') as f:
                 content = f.read()
-
-            content = re.sub(r"base: '\/',", "base: '/Pumpkin/',", content)
 
             with open(config_path, 'w', encoding='utf-8') as f:
                 f.write(content)
