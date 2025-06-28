@@ -94,8 +94,8 @@
   "PostPlugins": {
     "repo": "https://github.com/postyizhan/PostPlugins-Docs.git",
     "commit": "main",
-    "install": "pnpm install",
-    "build": "pnpm run build",
+    "install": "npm install",
+    "build": "npm run build",
     "output": "build",
     "rawUrl": "https://post.yizhan.wiki",
     "patcher": [
