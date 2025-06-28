@@ -57,6 +57,7 @@ class GeyserPatcher(Patcher):
 
             content = re.sub(r"baseUrl: '\/',", "baseUrl: '/Geyser/',", content)
             content = re.sub(r"url: 'https://docs.geysermc.org'", "url: 'https://fastly.8aka.cn'", content)
+            content = re.sub(r"onBrokenLinks: 'throw'", "onBrokenLinks: 'warn'", content)
 
             with open(config_path, 'w', encoding='utf-8') as f:
                 f.write(content)
