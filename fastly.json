@@ -46,7 +46,7 @@
   "Purpur": {
     "repo": "https://github.com/PurpurMC/PurpurDocs.git",
     "commit": "main",
-    "install": "pip install -r requirements.txt",
+    "install": "echo 'Cython < 3.0' > /tmp/constraint.txt && PIP_CONSTRAINT=/tmp/constraint.txt pip install PyYAML==6.0 && pip install -r requirements.txt",
     "build": "mkdocs build",
     "output": "site",
     "patcher": [
