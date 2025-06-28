@@ -270,7 +270,7 @@ function App() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600">正在从 fastly.json 加载站点配置...</p>
+            <p className="text-gray-600">正在加载站点配置...</p>
           </CardContent>
         </Card>
       </div>
@@ -418,11 +418,8 @@ function App() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Clock className="h-5 w-5 mr-2 animate-spin" />
-                  正在进行高精度测试...
+                  正在进行测试...
                 </CardTitle>
-                <CardDescription>
-                  使用多轮测试和DNS预热技术，减少网络波动影响
-                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Progress value={testProgress} className="w-full" />
@@ -485,7 +482,7 @@ function App() {
                           <span className="font-semibold text-gray-600">{speedComparison.originalSpeed}ms</span>
                         </div>
                         <div className="text-xs text-gray-500 mt-2">
-                          * 基于3轮测试平均值，已优化DNS影响
+                          * 基于3轮测试平均值
                         </div>
                       </div>
                     )}
@@ -557,7 +554,7 @@ function App() {
               通过 CDN 加速技术为您提供更快的文档访问体验
             </p>
             <p className="text-xs mt-2 text-gray-500">
-              高精度测试 • DNS优化 • 自动监控 • 动态配置 • 由 8aka-Team 提供技术支持
+              由 8aka-Team 提供技术支持
             </p>
           </div>
         </motion.footer>
