@@ -9,11 +9,11 @@ def run_command(command, cwd):
     subprocess.run(command, shell=True, check=True, cwd=cwd)
 
 def generate_index_html(config):
-    build_dir = 'build'
+    build_dir = 'build/index'
     if not os.path.exists(build_dir):
         os.makedirs(build_dir)
 
-    index_path = os.path.join(build_dir,'index', 'index.html')
+    index_path = os.path.join(build_dir, 'index.html')
 
     html_content = """
 <!DOCTYPE html>
