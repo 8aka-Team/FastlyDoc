@@ -45,7 +45,7 @@
   },
   "Purpur": {
     "repo": "https://github.com/PurpurMC/PurpurDocs.git",
-    "commit": "master",
+    "commit": "main",
     "install": "pip install -r requirements.txt",
     "build": "mkdocs build",
     "output": "site",
@@ -67,7 +67,7 @@
   },
   "Pumpkin": {
     "repo": "https://github.com/Pumpkin-MC/Pumpkin-Docs.git",
-    "commit": "main",
+    "commit": "master",
     "install": "pnpm install",
     "build": "pnpm run build",
     "output": "build",

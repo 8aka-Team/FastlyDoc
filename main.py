@@ -13,7 +13,7 @@ def generate_index_html(config):
     if not os.path.exists(build_dir):
         os.makedirs(build_dir)
 
-    index_path = os.path.join(build_dir, 'index.html')
+    index_path = os.path.join(build_dir,'index', 'index.html')
 
     html_content = """
 <!DOCTYPE html>
@@ -115,7 +115,7 @@ def main():
         config = json.load(f)
 
     for name, project in config.items():
-        print(f'Processing {name}...')
+        print(f'Processing {name}...',flush=True)
         repo_path = os.path.join('repos', name)
 
         if not os.path.exists(repo_path):
