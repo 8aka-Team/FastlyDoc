@@ -1,0 +1,94 @@
+{
+  "Paper": {
+    "repo": "https://github.com/PaperMC/docs.git",
+    "commit": "main",
+    "install": "pnpm install",
+    "build": "pnpm run build",
+    "output": "dist",
+    "rawUrl": "https://docs.papermc.io",
+    "patcher": [
+      {
+        "type": "URLPatcher",
+        "rules": [
+          {
+            "from": "docs.papermc.io",
+            "to": "paper.fastly.8aka.cn"
+          }
+        ]
+      },
+      {
+        "type": "PaperPatcher"
+      }
+    ],
+    "name": "Paper"
+  },
+  "Geyser": {
+    "repo": "https://github.com/GeyserMC/GeyserWebsite.git",
+    "commit": "master",
+    "install": "yarn install",
+    "build": "yarn run build",
+    "output": "build",
+    "rawUrl": "https://geysermc.org",
+    "patcher": [
+      {
+        "type": "URLPatcher",
+        "rules": [
+          {
+            "from": "geysermc.org",
+            "to": "geyser.fastly.8aka.cn"
+          }
+        ]
+      },
+      {
+        "type": "GeyserPatcher"
+      }
+    ],
+    "name": "Geyser"
+  },
+  "Purpur": {
+    "repo": "https://github.com/PurpurMC/PurpurDocs.git",
+    "commit": "main",
+    "install": "echo 'Cython < 3.0' > /tmp/constraint.txt && PIP_CONSTRAINT=/tmp/constraint.txt pip install PyYAML==6.0 && pip install -r requirements.txt",
+    "build": "mkdocs build",
+    "output": "site",
+    "rawUrl": "https://purpurmc.org",
+    "patcher": [
+        {
+            "type": "URLPatcher",
+            "rules": [
+              {
+                "from": "purpurmc.org",
+                "to": "purpur.fastly.8aka.cn"
+              }
+            ]
+          },
+          {
+            "type": "PurpurPatcher"
+          }
+    ],
+    "name": "Purpur"
+  },
+  "Pumpkin": {
+    "repo": "https://github.com/Pumpkin-MC/Pumpkin-Docs.git",
+    "commit": "master",
+    "install": "bun install",
+    "build": "bun run build",
+    "output": "docs/.vitepress/dist",
+    "rawUrl": "https://pumpkinmc.org",
+    "patcher": [
+        {
+            "type": "URLPatcher",
+            "rules": [
+              {
+                "from": "pumpkinmc.org",
+                "to": "pumpkin.fastly.8aka.cn"
+              }
+            ]
+          },
+          {
+            "type": "PumpkinPatcher"
+          }
+    ],
+    "name": "Pumpkin"
+  }
+}
