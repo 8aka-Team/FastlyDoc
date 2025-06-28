@@ -68,9 +68,9 @@
   "Pumpkin": {
     "repo": "https://github.com/Pumpkin-MC/Pumpkin-Docs.git",
     "commit": "master",
-    "install": "pnpm install",
-    "build": "pnpm run build",
-    "output": "build",
+    "install": "bun install",
+    "build": "bun run build",
+    "output": "docs/.vitepress/dist",
     "patcher": [
         {
             "type": "URLPatcher",
