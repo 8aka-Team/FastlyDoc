@@ -10,7 +10,7 @@ def run_command(command, cwd):
 
 def generate_index_html(config):
     index_dir = 'index'
-    run_command('npm install', index_dir)
+    run_command('npm install --force', index_dir)
     run_command('npm run build', index_dir)
 
     index_dest_dir = 'build/index'
